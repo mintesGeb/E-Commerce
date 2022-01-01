@@ -43,34 +43,34 @@ export const catagories = [
 export const popularProducts = [
   {
     id: 1,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 2,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 3,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 4,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 5,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 6,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 7,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
   {
     id: 8,
-    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
   },
 ];
