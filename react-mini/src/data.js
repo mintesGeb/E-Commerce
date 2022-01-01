@@ -21,3 +21,56 @@ export const sliderItems = [
     bg: "CFFFDC",
   },
 ];
+
+export const catagories = [
+  {
+    id: 1,
+    img: "https://i.pinimg.com/564x/c5/f6/dd/c5f6dd23b1f96653a6c036f22f31ccac.jpg",
+    title: "SHIRT STYLE!",
+  },
+  {
+    id: 2,
+    img: "https://i.pinimg.com/736x/45/31/7a/45317a50051e08122fba3ba6f686cb63.jpg",
+    title: "LONGWEAR LOVE",
+  },
+  {
+    id: 3,
+    img: "https://www.refinery29.com/images/10249412.jpg?format=pjpg&auto=webp&resize-filter=lanczos2&quality=65&sharpen=a3%2Cr3%2Ct0&optimize=low&width=1200&height=1200&crop=1%3A1%2Csmart&enable=upscale",
+    title: "LIGHT JACKETS",
+  },
+];
+
+export const popularProducts = [
+  {
+    id: 1,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 2,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 3,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 4,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 5,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 6,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 7,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+  {
+    id: 8,
+    img: "http://images.squarespace-cdn.com/content/v1/5eaaf95710f4544bcb11c759/1614808127644-PH7RDBP3QUU1G4LAE4PO/Screenshot+2021-03-03+at+21.41.13.png",
+  },
+];
