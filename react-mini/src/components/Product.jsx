@@ -34,8 +34,8 @@ const Container = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
