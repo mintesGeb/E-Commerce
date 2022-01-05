@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    img:""
+    img:{type:String,default:"https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/blank-profile-picture.png?raw=true"}
   },
   { timestamps: true }
 );

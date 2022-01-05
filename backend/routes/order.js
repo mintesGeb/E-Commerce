@@ -62,13 +62,18 @@ router.get(
 );
 
 router.get("/income", async(req, res) => {
+  const productId=req.query.pid;
+  console.log(productId);
+
     const date = new Date();
     const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
     const previousMonth = new Date(date.setMonth(lastMonth.getMonth() - 1));
   
     try {
       const income = await Order.aggregate([
-        { $match: { createdAt: { $gte: previousMonth } } },
+        { $match: { createdAt: { $gte: previousMonth } , ...(productId && {
+          products:{$elemMatch:{productId}}
+        })} },
         {
           $project: {
             month: { $month: "$createdAt" },
@@ -80,7 +85,9 @@ router.get("/income", async(req, res) => {
             _id: "$month",
             total: { $sum: "$sales" },
           },
+
         },
+        {$sort:{_id:-1}}
       ]);
       res.status(200).json(income);
     } catch (e) {

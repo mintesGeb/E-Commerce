@@ -5,6 +5,8 @@ const CryptoJS = require("crypto-js");
 
 router.post("/", verification.verifyTokenandAdmin, async (req, res) => {
   try {
+    console.log(req.body);
+
     const newProduct = new Product(req.body);
     newProduct.save();
     res.status(200).json(newProduct);
