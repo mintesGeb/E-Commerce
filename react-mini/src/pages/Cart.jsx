@@ -4,6 +4,14 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { useEffect, useState,useHistory } from "react";
+import { userRequest } from "../requestMethods";
+// import { useHistory } from "react-router-dom";
+
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -13,7 +21,7 @@ const Wrapper = styled.div`
   ${"" /* align-items:center; */}
   padding: 20px;
   margin: 50px 0;
-  ${mobile({ padding: "10px",margin: "10px 0" })}
+  ${mobile({ padding: "10px", margin: "10px 0" })}
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -140,6 +148,33 @@ const Hr = styled.hr`
 `;
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+
+ 
+
+  const onToken = (token) => {
+    setStripeToken(token);
+
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: cart.total * 100,
+        });
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total]);
+
+  console.log(stripeToken);
+
   return (
     <Container>
       <Navbar />
@@ -156,63 +191,42 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src="https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true" />
-                <Details>
-                  <ProductName>
-                    <b>Product: </b>Michael Jackson Jackets
-                  </ProductName>
-                  <ProductId>
-                    <b>ID: </b>321654879
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Size: </b>37.5
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
-              </PriceDetail>
-            </Product>
-            <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png" />
-                <Details>
-                  <ProductName>
-                    <b>Product: </b>Michael Jackson Jackets
-                  </ProductName>
-                  <ProductId>
-                    <b>ID: </b>321654879
-                  </ProductId>
-                  <ProductColor color="grey" />
-                  <ProductSize>
-                    <b>Size: </b>M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 20</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cart.products?.map((prod) => (
+              <Product key={prod._id}>
+                <ProductDetail>
+                  <Image src={prod.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Product: </b>
+                      {prod.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID: </b>
+                      {prod._id}
+                    </ProductId>
+                    <ProductColor color={prod.color} />
+                    <ProductSize>
+                      <b>Size: </b>
+                      {prod.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Remove />
+                    <ProductAmount>{prod.quantity}</ProductAmount>
+                    <Add />
+                  </ProductAmountContainer>
+                  <ProductPrice>$ {prod.price * prod.quantity}</ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
           </Info>
           <Summery>
             <SummeryTitle>Order Summery</SummeryTitle>
             <SummeryItem>
               <SummeryItemText>Subtotal</SummeryItemText>
-              <SummeryItemPrice>$ 80</SummeryItemPrice>
+              <SummeryItemPrice>{cart.total}</SummeryItemPrice>
             </SummeryItem>
             <SummeryItem>
               <SummeryItemText>Estimated Shipping</SummeryItemText>
@@ -224,9 +238,20 @@ const Cart = () => {
             </SummeryItem>
             <SummeryItem type="total">
               <SummeryItemText>Total</SummeryItemText>
-              <SummeryItemPrice>$ 80</SummeryItemPrice>
+              <SummeryItemPrice>{cart.total}</SummeryItemPrice>
             </SummeryItem>
-            <Button>CHECKOUT NOW</Button>
+            <StripeCheckout
+              name="Mintes Shop"
+              image="https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/favicon.png?raw=true"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey="pk_test_51KDddTB2P3fva0aNfoTxnm7NxRRuxrcp9SPK9grPxcORAQZYHecWykS4l8xIwnlczB0LiTm4ptY5yHpCDCQzlTWX00SWoKSj9E"
+            >
+              <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
           </Summery>
         </Bottom>
       </Wrapper>

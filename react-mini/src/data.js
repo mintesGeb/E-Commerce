@@ -46,15 +46,15 @@ export const catagories = [
 export const popularProducts = [
   {
     id: 1,
-    img: "https://i.pinimg.com/736x/44/b1/84/44b18439304d0ac77bfc75311b33e38d.jpg",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/1.png?raw=true",
   },
   {
     id: 2,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/2.png?raw=true",
   },
   {
     id: 3,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/3.png?raw=true",
   },
   {
     id: 4,
@@ -62,18 +62,18 @@ export const popularProducts = [
   },
   {
     id: 5,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/5.png?raw=true",
   },
   {
     id: 6,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/6.png?raw=true",
   },
   {
     id: 7,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/7.png?raw=true",
   },
   {
     id: 8,
-    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/4.png?raw=true",
+    img: "https://github.com/mintesGeb/E-Commerce/blob/main/react-mini/src/images/home/products/8.png?raw=true",
   },
 ];

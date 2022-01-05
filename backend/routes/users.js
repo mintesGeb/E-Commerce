@@ -41,6 +41,8 @@ router.delete(
   }
 );
 router.get("/", verification.verifyTokenandAdmin, async (req, res) => {
+  console.log(req.query);
+
   const query = req.query.new;
   try {
     const users = query
